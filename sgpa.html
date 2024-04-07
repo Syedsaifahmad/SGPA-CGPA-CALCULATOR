@@ -17,7 +17,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="https://syedsaifahmad.github.io/SGPA-CGPA-CALCULATOR/">HOME</a>
+                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/index.html#">HOME</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="sgpa.html">SGPA</a>
@@ -29,59 +29,16 @@
           </div>
         </div>
       </nav>
-      <main>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">SGPA</h5>
-              <p class="card-text">Feel free to calculate your semester SGPA. You can calculate SGPA of one at a time and input the data manually.</p>
-              <a href="#" class="btn btn-primary">Calculate</a>
-              
-            
-
-          <!--Creating Form to take user input for calculating SGPA-->
-          <div class="container my-4">
-          <div id="form" class="my-4">
-            <div class="totalSub">
-              <h2 class="info">Enter Total Number Of Subject  <input class="subInput" type="text"><button id="subSub" class="btn btn-sm btn-primary">Submit</button></h2>
-           
-            </div>
-            <h2>Enter Grade & Credit</h2>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>S.No</th>
-                  <th>Grade</th>
-                  <th>Credit</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="tableBody">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td><select class="form-select" aria-label="Default select example">
-                      <option selected>SELECT</option>
-                      <option value="1">A+</option>
-                      <option value="2">A</option>
-                      <option value="3">B</option>
-                      <option value="3">C</option>
-                      <option value="3">D</option>
-                      <option value="3">P</option>
-                      <option value="3">F</option>
-                    </select>
-                    </td>
-                    <td><input type="text"></td>
-                    <td>
-                      <button class="btn btn-sm btn-danger">Delete</button>
-                    </td>
-                  </tr>
-              </tbody>
-            </table>
-          </div>
+      <div class="card text-bg-secondary my-4" style="max-width: 28rem;">
+        <div class="card-header"><B>SGPA</B></div>
+        <div class="card-body">
+          <h5 class="card-title">ENTER NUMBER OF TOTAL SUBJECT</h5>
+          <input type="text" class="submiting"><button class="btn btn-warning btn-sm submiting">SUBMIT</button>
+          <p class="card-text-2">SELECT GRADE AND ENTER CREADIT</p>
         </div>
+      </div>
+      
 
-              </div>
-          </div>
-      </main>
       <footer class="footer">
         <p>&#169 2024 Syed Saif Ahmad</p>
     </footer>
