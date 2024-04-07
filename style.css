@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #aaa7a7;
+    color: #ffffff;
+}
+.footer{
+    background-color: #414141;
+    display: flex;
+    justify-content: center;
+    padding-top: 13px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+.card{
+    background-color: rgb(34, 13, 13);
+    color: white;
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+.note{
+    margin-top: 5px;
+}
+.info{
+    background-color: rgb(151, 129, 151);
+}
+.totalSub{
+    display: flex;
+    text-align: center;
+    display: inline;
+}
+.subInput{
+    margin:  10px;
+    border-radius: 20px;
+    
+}
+#subSub{
+    margin-bottom: 5px;
+    margin-inline: 2px;
+}
