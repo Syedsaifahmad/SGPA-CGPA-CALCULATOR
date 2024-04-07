@@ -25,23 +25,13 @@ body{
     margin-top: 25px;
     text-align: center;
 }
-.note{
-    margin-top: 5px;
+.card-text-2{
+    margin-top: 30px ;
+    background-color: #0a0a0a;
+    opacity: 50%;
+    border-radius: 10px;
 }
-.info{
-    background-color: rgb(151, 129, 151);
-}
-.totalSub{
-    display: flex;
-    text-align: center;
-    display: inline;
-}
-.subInput{
-    margin:  10px;
-    border-radius: 20px;
-    
-}
-#subSub{
-    margin-bottom: 5px;
-    margin-inline: 2px;
+.submiting{
+    border-radius: 10px;
+    margin: 5px;
 }
