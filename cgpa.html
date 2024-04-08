@@ -29,18 +29,85 @@
           </div>
         </div>
       </nav>
-      <main>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">CGPA</h5>
-              <p class="card-text">Please keep the following text in mind: "To calculate your total CGPA by entering the SGPA for each semester."</p>
-              <a href="#" class="btn btn-primary">Calculate</a>
-            </div>
-          </div>
-      </main>
+      <div class="card text-bg-secondary my-4" style="max-width: 28rem;" id="unique">
+        <div class="card-header"><H3><B>CGPA</B></H3></div>
+        <div class="card-body">
+          <h5 class="card-title">ENTER TOTAL NUMBER OF SUBJECT INCLUDING PRACTICAL UP TO CURRENT SEMESTER TO CALCULATE ACCURATE <B>CGPA</B></h5>
+          <input type="number" class="submiting" id="subjectCount"><button class="btn btn-warning btn-sm submiting" onclick="populateTable()">SUBMIT</button>
+          <p class="card-text-2">SELECT GRADE AND CREDIT</p>
+
+ 
+          <table class="table" id="subjectTable">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Grade</th>
+                <th>Credit</th>
+              </tr>
+            </thead>
+            <tbody>
+            
+            </tbody>
+          </table>
+          <!-- <label for="score">Score: </label>
+            <input type="text" id="score" readonly> -->
+          <label for="cgpa">CGPA: </label>
+            <input type="text" id="cgpa" readonly>
+        </div>
+      </div>
+      
+
       <footer class="footer">
         <p>&#169 2024 Syed Saif Ahmad</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      function populateTable() {
+        var subjectCount = document.getElementById("subjectCount").value;
+        var tableBody = document.querySelector("#subjectTable tbody");
+        tableBody.innerHTML = ""; // Clear existing table rows
+    
+        for (var i = 1; i <= subjectCount; i++) {
+          var newRow = document.createElement("tr");
+          newRow.innerHTML = `
+            <td>${i}</td>
+            <td>
+          <select id="grade${i}" onchange="calculateScore()">
+            <option value="10">A+</option>
+            <option value="9">A</option>
+            <option value="8">B</option>
+            <option value="7">C</option>
+            <option value="6">D</option>
+            <option value="5">P</option>
+            <option value="0">F</option>
+          </select>
+        </td>
+              <td>
+          <input type="number" id="credit${i}" step="0.1" oninput="calculateScore()" placeholder="Enter credit">
+        </td>
+          `;
+          tableBody.appendChild(newRow);
+        }
+      }
+
+      // Function to calculate the score and CGPA
+  function calculateScore() {
+    var subjectCount = document.getElementById("subjectCount").value;
+    var totalCredit = 0;
+    var totalScore = 0;
+
+    for (var i = 1; i <= subjectCount; i++) {
+      var credit = parseFloat(document.getElementById(`credit${i}`).value);
+      var grade = parseInt(document.getElementById(`grade${i}`).value);
+      var score = isNaN(credit) ? 0 : (credit * grade);
+      totalCredit += isNaN(credit) ? 0 : credit;
+      totalScore += score;
+    }
+
+    var cgpa = totalCredit === 0 ? 0 : totalScore / totalCredit;
+    // document.getElementById("score").value = totalScore;
+    document.getElementById("cgpa").value = cgpa.toFixed(2);
+  }
+    </script>
   </body>
 </html>
